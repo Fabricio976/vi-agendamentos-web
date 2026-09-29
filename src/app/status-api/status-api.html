@@ -1,0 +1,9 @@
+<!-- O erro vem primeiro: ler value() com o resource em erro lança exceção. -->
+@if (health.error()) {
+  <p class="status status--erro">API fora do ar</p>
+  <button type="button" (click)="health.reload()">Tentar de novo</button>
+} @else if (health.value(); as status) {
+  <p class="status status--ok">API no ar · ambiente {{ status.ambiente }}</p>
+} @else {
+  <p class="status">Verificando a API…</p>
+}

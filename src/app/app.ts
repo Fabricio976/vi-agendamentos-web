@@ -1,12 +1,11 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { StatusApi } from './status-api/status-api';
 
 @Component({
-  imports: [RouterOutlet],
   selector: 'app-root',
-  styleUrl: './app.css',
+  imports: [RouterOutlet, StatusApi],
   templateUrl: './app.html',
+  styleUrl: './app.css',
 })
-export class App {
-  protected readonly title = signal('vi-agendamentos-web');
-}
+export class App {}

@@ -1,0 +1,12 @@
+.status {
+  font-family: system-ui, sans-serif;
+  font-size: 1.125rem;
+}
+
+.status--ok {
+  color: #1b7f3b;
+}
+
+.status--erro {
+  color: #b3261e;
+}
