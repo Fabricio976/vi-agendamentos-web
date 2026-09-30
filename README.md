@@ -13,14 +13,15 @@ docker compose up --build
 
 Abra http://localhost:4200. As chamadas `/api` passam pelo proxy do Angular até o serviço `api` do compose.
 
-Quando o `package.json` mudar, apague os volumes e reconstrua a imagem, para o `node_modules` do contêiner nascer de novo:
+Quando o `package.json` mudar, apague só o volume do `node_modules` e reconstrua a imagem, para ele nascer de novo:
 
 ```powershell
-docker compose down -v
+docker compose down
+docker volume rm vi-agendamentos_web-node-modules
 docker compose up --build
 ```
 
-O `-v` apaga também o cache de pacotes do .NET, que a API baixa de novo na subida seguinte.
+Não use `docker compose down -v`: ele apaga todos os volumes, inclusive o banco local.
 
 ## Testes
 
