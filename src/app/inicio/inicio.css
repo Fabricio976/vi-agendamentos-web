@@ -1,0 +1,13 @@
+.salao h2 {
+  margin-bottom: 0.25rem;
+}
+
+.aviso--erro {
+  color: var(--cor-erro);
+}
+
+.sair {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}

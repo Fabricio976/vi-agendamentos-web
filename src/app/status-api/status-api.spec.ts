@@ -30,7 +30,6 @@ describe('StatusApi', () => {
     return fixture;
   }
 
-  // Pega: componente que não chama /api/health, não mostra o resultado ou mostra um ambiente fixo.
   it('mostra "API no ar" com o ambiente quando a API responde', async () => {
     const fixture = renderizar();
 
@@ -40,7 +39,6 @@ describe('StatusApi', () => {
     expect(fixture.nativeElement.textContent).toContain('API no ar · ambiente Staging');
   });
 
-  // Pega: erro 500 tratado como sucesso ou como carregamento eterno.
   it('mostra "API fora do ar" quando a API responde erro 500', async () => {
     const fixture = renderizar();
 
@@ -51,7 +49,6 @@ describe('StatusApi', () => {
     expect(fixture.nativeElement.textContent).not.toContain('API no ar');
   });
 
-  // Pega: só erro com status HTTP tratado, e a queda da rede passando despercebida.
   it('mostra "API fora do ar" quando a rede falha', async () => {
     const fixture = renderizar();
 
@@ -61,7 +58,6 @@ describe('StatusApi', () => {
     expect(fixture.nativeElement.textContent).toContain('API fora do ar');
   });
 
-  // Pega: botão "Tentar de novo" que não busca a API outra vez.
   it('"Tentar de novo" busca a API outra vez e mostra "API no ar"', async () => {
     const fixture = renderizar();
     http.expectOne('/api/health').flush('Falhou', { status: 500, statusText: 'Internal Server Error' });

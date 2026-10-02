@@ -1,0 +1,20 @@
+.entrar {
+  display: grid;
+  gap: 1rem;
+  max-width: 22rem;
+}
+
+.motivo {
+  color: var(--cor-erro);
+}
+
+.google {
+  display: block;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  background: #1a73e8;
+  color: #fff;
+  font-size: 1.125rem;
+  text-align: center;
+  text-decoration: none;
+}

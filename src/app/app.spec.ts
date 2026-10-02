@@ -12,7 +12,6 @@ describe('App', () => {
     }).compileComponents();
   });
 
-  // Pega: título trocado ou status da API fora da tela inicial.
   it('mostra o título e o status da API', () => {
     const fixture = TestBed.createComponent(App);
     fixture.detectChanges();

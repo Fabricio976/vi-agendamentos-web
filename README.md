@@ -23,6 +23,10 @@ docker compose up --build
 
 Não use `docker compose down -v`: ele apaga todos os volumes, inclusive o banco local.
 
+## Entrar
+
+Abra http://localhost:4200, e não 127.0.0.1: o Google só volta para o endereço cadastrado no cliente OAuth. Sem sessão, o app leva para a tela de entrar. O botão "Entrar com Google" passa pelo Google e volta pela API, que abre a sessão. As credenciais do Google ficam no `.env` do repositório `vi-agendamentos`.
+
 ## Testes
 
 Rodam no Windows, sem contêiner. Pré-requisitos: Node.js 24.15 ou mais novo e Angular CLI 22.

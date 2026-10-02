@@ -1,0 +1,7 @@
+<section class="entrar">
+  <h2>Entrar</h2>
+  @if (motivo(); as motivo) {
+    <p class="motivo" role="alert">{{ motivo }}</p>
+  }
+  <a class="google" [href]="linkDoGoogle()">Entrar com Google</a>
+</section>

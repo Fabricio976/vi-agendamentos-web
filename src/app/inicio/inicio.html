@@ -1,0 +1,20 @@
+@if (saloes.error()) {
+  <p class="aviso aviso--erro">Não foi possível carregar seus salões.</p>
+  <button type="button" (click)="saloes.reload()">Tentar de novo</button>
+} @else if (saloes.value(); as lista) {
+  @for (salao of lista; track salao.id) {
+    <section class="salao">
+      <h2>{{ salao.nome }}</h2>
+      <p>{{ papeis[salao.role] }}</p>
+    </section>
+  } @empty {
+    <p class="aviso">Seu login ainda não está ligado a nenhum salão.</p>
+  }
+} @else {
+  <p class="aviso">Carregando seus salões…</p>
+}
+
+<button type="button" class="sair" (click)="sair()">Sair</button>
+@if (erroAoSair()) {
+  <p class="aviso aviso--erro" role="alert">Não foi possível sair. Tente de novo.</p>
+}
